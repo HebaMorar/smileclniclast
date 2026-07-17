@@ -1,0 +1,217 @@
+/* ═════════ PROFILE ═════════ */
+.profile-page {
+    padding: 140px 0 100px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.profile-header {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 35px;
+}
+
+    .profile-header h2 {
+        margin-top: 25px;
+        font-size: 42px;
+        color: var(--primary-dark);
+        font-family: 'Playfair Display', serif;
+    }
+
+    .profile-header p {
+        color: var(--text-light);
+        margin-top: 10px;
+    }
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+/* ═════════ الأزرار المفقودة وتأثيراتها ═════════ */
+.btn {
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: var(--gradient-main, linear-gradient(135deg, #0d3f8a, #2d8fe3));
+    color: white !important;
+    box-shadow: 0 8px 20px rgba(45, 143, 227, 0.25);
+}
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 25px rgba(45, 143, 227, 0.35);
+    }
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-dark, #0d3f8a);
+    color: var(--primary-dark, #0d3f8a) !important;
+}
+
+    .btn-outline:hover {
+        background: var(--primary-dark, #0d3f8a);
+        color: white !important;
+        transform: translateY(-2px);
+    }
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    .card-title h3 {
+        font-size: 30px;
+        color: var(--primary-dark);
+        font-family: 'Playfair Display', serif;
+    }
+
+.edit-btn {
+    background: var(--light-blue);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    color: var(--primary-dark);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .edit-btn:hover {
+        background: var(--primary-blue, #2d8fe3);
+        color: white;
+    }
+
+.profile-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+    .input-box label {
+        margin-bottom: 10px;
+        font-weight: 700;
+        color: var(--primary-dark);
+    }
+
+    .input-box input, .form-control {
+        padding: 18px 22px;
+        border-radius: 16px;
+        border: 1px solid var(--border-light);
+        background: var(--bg-light);
+        font-size: 15px;
+        outline: none;
+        transition: .3s;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+        .input-box input:focus, .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(45,143,227,.15);
+        }
+
+/* تنسيق الـ Labels المفقود لتعطي مظهراً كحقول الإدخال عند العرض فقط */
+.profile-label-value {
+    padding: 18px 22px;
+    border-radius: 16px;
+    border: 1px solid var(--border-light, #dde8f2);
+    background: var(--bg-light, #fafdff);
+    font-size: 15px;
+    color: #333;
+    display: block;
+    font-weight: bold;
+}
+
+.dash-grid {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+    .dash-grid th {
+        background: var(--gradient-main);
+        color: white;
+        padding: 18px;
+    }
+
+    .dash-grid td {
+        padding: 18px;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+.status-confirmed {
+    background: rgba(34, 197, 94, .15);
+    color: #0f8a3b;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.status-pending {
+    background: rgba(255, 193, 7, .2);
+    color: #b77900;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .profile-form {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-header {
+        padding: 35px 25px;
+    }
+
+        .profile-header h2 {
+            font-size: 30px;
+        }
+
+    .dash-grid {
+        display: block;
+        overflow-x: auto;
+    }
+}

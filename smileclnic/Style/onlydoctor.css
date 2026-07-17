@@ -1,0 +1,201 @@
+/* ===== SmileCare Theme ===== */
+:root {
+    --primary-dark: #0f2a44;
+    --primary: #1a3a5c;
+    --primary-light: #dce6f2;
+    --primary-soft: #eef4fb;
+    --card-shadow: none;
+    --border-radius-lg: 1.5rem;
+    --border-radius-md: 1rem;
+}
+
+/* ===== إخفاء شريط التنقل العلوي والتذييل ===== */
+.navbar, .top-nav, header, nav, .navbar-nav, .nav, .navbar-header, .navbar-collapse,
+footer, .footer, .copyright, .footer-note, .container-footer, .footer-copyright,
+.site-footer, .page-footer, #footer, .Footer, .footer-bottom {
+    display: none !important;
+}
+
+/* ===== كلاس الخلفية الموحد للأدمن والطبيب لإظهار الصورة مباشرة بدون بياض مصمت ===== */
+body.admin-bg {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    background: url("../img/Clinic3.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    padding: 1.5rem;
+}
+
+* {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+.dashboard-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 2.5rem;
+    background: transparent !important;
+    border-radius: var(--border-radius-lg);
+    min-height: 90vh;
+}
+
+/* ===== شريط التبويبات الشفاف ===== */
+.tab-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    background: transparent !important;
+    padding: 0.6rem;
+    border-radius: 60px;
+    box-shadow: none !important;
+    border: 1px solid rgba(26, 58, 92, 0.2);
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 0.65rem 1.8rem;
+    border-radius: 60px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #4b6589;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+    .tab-btn:hover {
+        background: rgba(26, 58, 92, 0.1);
+        color: var(--primary-dark);
+    }
+
+    .tab-btn.active {
+        background: var(--primary);
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(26, 58, 92, 0.25);
+    }
+
+/* ===== محتوى التبويبات الشفاف ===== */
+.tab-content {
+    display: none;
+    background: transparent !important;
+    border-radius: var(--border-radius-md);
+    padding: 1.8rem 0;
+    box-shadow: none !important;
+    border: none !important;
+    animation: fadeSlide 0.35s ease-out;
+}
+
+    .tab-content.active-tab {
+        display: block;
+    }
+
+/* ═════════ الجدول الشفاف الزجاجي مع الـ Blur والخط الداكن ═════════ */
+.dash-grid {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+    .dash-grid th {
+        background: linear-gradient(135deg, #0d3f8a, #2d8fe3);
+        color: white;
+        padding: 16px;
+        font-weight: 600;
+        border: none;
+    }
+
+    .dash-grid td {
+        padding: 16px;
+        border-bottom: 1px solid rgba(13, 63, 138, 0.15);
+        vertical-align: middle;
+        /* التأثير الزجاجي المضببة الخفيف لعزل تفاصيل الكرسي عن النص */
+        background: rgba(255, 255, 255, 0.25) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        /* وضوح الخط الكحلي الغامق والبارز وسماكته */
+        color: #0f2a44 !important;
+        font-weight: 600;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    }
+
+    .dash-grid tr:hover td {
+        background: rgba(255, 255, 255, 0.45) !important;
+        transition: background 0.2s ease;
+    }
+
+/* ═════════ STATUS LABELS ═════════ */
+.status-confirmed {
+    background: rgba(34, 197, 94, .15);
+    color: #0f8a3b;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 0.75rem;
+}
+
+.status-pending {
+    background: rgba(255, 193, 7, .2);
+    color: #b77900;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 0.75rem;
+}
+
+/* ===== الأيقونة الدائرية الثابتة أسفل اليمين ===== */
+.home-fixed-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #0d3f8a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(13, 63, 138, 0.15);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+    .home-fixed-btn:hover {
+        background: linear-gradient(135deg, #0d3f8a, #2d8fe3) !important;
+        color: #ffffff;
+        border-color: transparent;
+        transform: scale(1.1) rotate(-10deg);
+    }
+
+.section-title {
+    color: #0d3f8a;
+    border-right: 5px solid #2d8fe3;
+    padding-right: 10px;
+}
+
+.footer-note {
+    color: #3f5d80;
+}
+
+@media (max-width: 768px) {
+    .dash-grid {
+        display: block;
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,274 @@
+/* ===== التعديل الجديد: إلغاء الخلفية من MasterPage بجعلها شفافة ===== */
+html, body {
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== إخفاء شريط التنقل بالكامل ===== */
+.navbar, .top-nav, header, nav, .navbar-nav, .nav, .navbar-header, .navbar-collapse {
+    display: none !important;
+}
+
+/* ===== إخفاء التذييل (حقوق النشر، حفظ الجودة) ===== */
+footer, .footer, .copyright, .footer-note, .container-footer, .footer-copyright,
+.site-footer, .page-footer, #footer, .Footer, .footer-bottom {
+    display: none !important;
+}
+
+/* ===== إزالة أي مسافات علوية أو سفلية ===== */
+body {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ===== التعديل الجديد: الباك جراوند المتناسق مع الهوية الفخمة ===== */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ارتفاع كامل الشاشة */
+    background: linear-gradient( rgba(247, 251, 255, 0.2), rgba(223, 244, 255, 0.2) ), url("../img/Clinic3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 1.5rem;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ===== التعديل الجديد: البطاقة مع تأثير الزجاج والتعديلات الجديدة ===== */
+.login-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 50px -12px rgba(13, 63, 138, 0.2);
+    padding: 2.8rem 2.8rem 2.5rem;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    /* الحفاظ على حركة الظهور الأساسية كما هي */
+    animation: slideUpFade 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* تعريف الحركة الأساسي بدون تغيير */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تأثير hover للبطاقة الأساسي */
+.login-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* التعديل الجديد: لون العنوان */
+.login-card h2 {
+    color: #0d3f8a;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+}
+
+/* التعديل الجديد: لون النص الفرعي والبوردر السفلي */
+.login-card .sub-text {
+    color: #5d6c80;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+    border-bottom: 3px solid #2d8fe3;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+/* رسالة الخطأ الأساسية */
+#lblMessage {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    background: #fdecea;
+    color: #b71c1c !important;
+    padding: 0.5rem 1rem;
+    border-radius: 60px;
+    font-size: 0.85rem;
+    border: 1px solid #fad1d1;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 1.4rem;
+}
+
+    /* التعديل الجديد: لون نصوص الـ Labels */
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        color: #10233d;
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+        padding-left: 0.2rem;
+    }
+
+.input-icon-wrapper {
+    position: relative;
+}
+
+    /* التعديل الجديد: لون الأيقونات الداخلية */
+    .input-icon-wrapper i {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #0d3f8a;
+        opacity: 0.5;
+        font-size: 1rem;
+    }
+
+/* التعديل الجديد: ستايل حقول الإدخال الزجاجية الشفافة */
+.form-control {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.8rem;
+    border-radius: 60px;
+    border: 1.5px solid rgba(217, 236, 247, 0.9);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.3);
+    color: #10233d;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+    /* التعديل الجديد: فوكس حقول الإدخال */
+    .form-control:focus {
+        border-color: #2d8fe3;
+        box-shadow: 0 0 0 4px rgba(45, 143, 227, 0.15);
+        outline: none;
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    .form-control::placeholder {
+        color: #a0b8d0;
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+
+/* التعديل الجديد: زر تسجيل الدخول بالتدرج اللوني الجديد والظل */
+.btn-login {
+    background: linear-gradient(135deg, #0d3f8a, #2d8fe3);
+    color: #ffffff;
+    border: none;
+    border-radius: 60px;
+    padding: 0.75rem 1.8rem;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 8px 20px rgba(45, 143, 227, 0.3);
+    letter-spacing: 0.5px;
+    margin-top: 0.3rem;
+}
+
+    /* التعديل الجديد: تحويم زر تسجيل الدخول بالتدرج الداكن */
+    .btn-login:hover {
+        background: linear-gradient(135deg, #08336f, #1f7fd4);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(26, 58, 92, 0.35);
+    }
+
+    .btn-login i {
+        margin-right: 10px;
+    }
+
+/* التعديل الجديد: البوردر العلوي للروابط */
+.login-links {
+    margin-top: 1.8rem;
+    font-size: 0.85rem;
+    color: #4b6589;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+    /* التعديل الجديد: لون الروابط السفلي */
+    .login-links a {
+        color: #0d3f8a;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s ease;
+    }
+
+        .login-links a:hover {
+            color: #0f2a44;
+            text-decoration: underline;
+        }
+
+    .login-links .divider {
+        color: #b0c4db;
+        font-weight: 300;
+    }
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 2rem 1.5rem;
+    }
+
+        .login-card h2 {
+            font-size: 1.5rem;
+        }
+
+    .form-control {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem 0.6rem 2.6rem;
+    }
+}
+
+.home-fixed-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #0d3f8a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(13, 63, 138, 0.15);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+    .home-fixed-btn:hover {
+        background: linear-gradient(135deg, #0d3f8a, #2d8fe3) !important;
+        color: #ffffff;
+        border-color: transparent;
+        transform: scale(1.1) rotate(-10deg);
+        box-shadow: 0 8px 25px rgba(45, 143, 227, 0.35);
+    }

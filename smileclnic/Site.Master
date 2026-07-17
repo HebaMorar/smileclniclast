@@ -1,0 +1,140 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SmileCare Dental Clinic offers modern dental care, whitening, implants, and online appointments in Jordan." />
+    <title>SmileCare Dental Clinic</title>
+    <link rel="icon" href="data:;base64,=">
+        <link href="Style/indexHomeStyle (4).css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="Style/appointemen.css" rel="stylesheet" />
+    <link href="Style/Login-SignupStyle.css" rel="stylesheet" />
+        <link href="Style/MasterStyle.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%-- ══════════════════════ NAVBAR ══════════════════════ --%>
+        <nav>
+            <div class="nav-logo">
+<a href="indexHome.aspx">
+            <img src="img/SCloga.png" alt="SmileCare Logo" />
+        </a>            </div>
+            <ul>
+                <li><a href="indexHome.aspx">Home</a></li>
+                <li><a href="indexHome.aspx#about-section">About Us</a></li>
+                <li><a href="Appointment.aspx">Book Appointment</a></li>
+                <li><a href="indexHome.aspx#contact-section">Contact Us</a></li>
+                <li><a href="Login.aspx">Login</a></li>
+                <li><a href="Profile.aspx">Profile</a></li>
+                <li><a href="OnlyDoctor.aspx">OnlyDoctor</a></li>
+                <li><a href="AdminDashboard.aspx">Admin</a></li>
+            </ul>
+        </nav>
+
+        <%-- Main Content Area --%>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <%-- ══════════════════════ FOOTER ══════════════════════ --%>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3 style="font-family: 'Playfair Display', serif; color: white;">SmileCare</h3>
+                        <p>Premium dental care with modern technology and personalized treatment.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="Default.aspx#hero-section">Home</a></li>
+                            <li><a href="Default.aspx#about-section">About</a></li>
+                            <li><a href="Default.aspx#services-section">Services</a></li>
+                            <li><a href="Default.aspx#contact-section">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>Teeth Whitening</li>
+                            <li>Dental Implants</li>
+                            <li>Orthodontics</li>
+                            <li>General Dentistry</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#">Facebook</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    © 2025 SmileCare Dental Clinic — All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </form>
+
+    <script>
+        /* ══════════════════════ SCROLL ANIMATION ══════════════════════ */
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach((el) => {
+                observer.observe(el);
+            });
+
+            /* ==================== GALLERY BUTTONS ==================== */
+            const galleryScroll = document.querySelector('.gallery-scroll');
+
+            const nextBtn = document.querySelector('.next-btn');
+
+            const prevBtn = document.querySelector('.prev-btn');
+
+
+
+            if (nextBtn && galleryScroll) {
+
+                nextBtn.onclick = () => {
+
+                    galleryScroll.scrollBy({ left: 450, behavior: 'smooth' });
+
+                };
+
+            }
+
+
+
+            if (prevBtn && galleryScroll) {
+
+                prevBtn.onclick = () => {
+
+                    galleryScroll.scrollBy({ left: -450, behavior: 'smooth' });
+
+                };
+
+            }
+
+        });</script>
+    </script>
+</body>
+</html>
